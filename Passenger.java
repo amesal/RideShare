@@ -1,4 +1,3 @@
-package RideShare;
 import java.util.*;
 public class Passenger(){
     private int destination;
