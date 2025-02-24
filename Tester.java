@@ -1,4 +1,3 @@
-package RideShare;
 public class Tester {
     public static void main(String[] args){
         Passenger a = new Passenger(5, 7);
