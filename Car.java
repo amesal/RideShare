@@ -25,5 +25,9 @@ public class Car {
             customers.add(p);
         }
     }
+
+    public boolean hasRoom(){
+        return customers.size() < 3;
+    }
     
 }
