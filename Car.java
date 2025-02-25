@@ -22,7 +22,7 @@ public class Car {
         if(customers.size() >= 3){
             System.out.println("error: no room!");
         } else if(p.getDirection() != direction) {
-            System.out.println("error: trying to add person in wrong direction")
+            System.out.println("error: trying to add person in wrong direction");
         } else {
             customers.add(p);
         }
