@@ -45,7 +45,16 @@ public class Car {
 
     }
 
-
+    public void move(){
+        if(currentLocation == destination){
+            return; //gets out of the method, kicking yourself out before trying to move
+        }
+        if(direction){ //direction == true
+            currentLocation++;
+        } else {
+            currentLocation--;
+        }
+    }
     public boolean hasRoom(){
         return customers.size() < 3;
     }

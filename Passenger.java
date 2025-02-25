@@ -9,7 +9,7 @@ public class Passenger{
     public Passenger(int myDestination, int myStart){
         destination = myDestination;
         startLocation = myStart;
-        if(destination > startLocation){
+        if(destination < startLocation){
             direction = false; //bc wanting to go left
         } else {
             direction = true;
