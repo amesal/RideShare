@@ -32,7 +32,7 @@ public class Passenger{
     }
 
     public String toString(){
-        return super.toString() + " Start: " + startLocation + " Destination: " + destination + " Going right? " + direction; //boolean based on going right or not
+        return super.toString() + " St: " + startLocation + " Dstn: " + destination + " Right? " + direction; //boolean based on going right or not
     }
 
 }
