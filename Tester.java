@@ -1,6 +1,15 @@
 package RideShare;
 public class Tester {
     public static void main(String[] args){
+        System.out.println("Running the RideShare Simulation!");
+        System.out.println("");
+        System.out.println("Establishing 3 stations...");
+
+
+        System.out.println("Generating non-random cars with locations and destinations...");
+        //need to make this in the car class
+
+        System.out.println("Generating non-random passengers with locations and destinations...");
         Passenger a = new Passenger(5, 7);
         Passenger b = new Passenger(2, 0);
         Passenger c = new Passenger(10, 24);
@@ -11,6 +20,7 @@ public class Tester {
         System.out.println(n);
         n.addPassenger(a);
         System.out.println(n);
+        System.out.println(n.unload());
     }
     
 }
