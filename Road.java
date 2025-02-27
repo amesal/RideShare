@@ -6,11 +6,11 @@ package RideShare;
 import java.util.*;
 public class Road {
     
-    private ArrayList<Station> stationTracker = new ArrayList<Station>();
+    private Station[] stationTracker = new Station[5]; //does this mean the stations will be named 0-4?
     private ArrayList<Car> carTracker = new ArrayList<Car>();
 
-    public Road(int roadSize){
-        stationTracker = new ArrayList<Station>();
+    public Road(){
+        stationTracker = new Station[5];
         carTracker = new ArrayList<Car>();
 
     }
