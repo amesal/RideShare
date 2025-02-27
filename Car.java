@@ -55,8 +55,19 @@ public class Car {
             currentLocation--;
         }
     }
+
     public boolean hasRoom(){
         return passengers.size() < 3;
+    }
+
+    public int milesTraveled(){
+        int traveled = 0;
+        if(currentLocation == destination){
+            for(Passenger a : passengers){
+                traveled += Math.abs(a.getStart() - currentLocation);
+            }
+        }
+        return traveled;
     }
     
 }
