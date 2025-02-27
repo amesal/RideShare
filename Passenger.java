@@ -2,7 +2,7 @@ package RideShare;
 import java.util.*;
 public class Passenger{
     private int destination;
-    private boolean direction; // true for goign right, false for left
+    private boolean direction; // true for going right, false for left
     private int startLocation; //could be redundant to ask for every location along the way but starting location could be helpful
 
     //constructors
