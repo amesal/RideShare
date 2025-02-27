@@ -1,4 +1,6 @@
 package RideShare;
+
+//have to reset traveled at the start of the program when running a new simulation (ask how to do this)
 public class Tester {
     public static void main(String[] args){
         System.out.println("Running the RideShare Simulation!");
