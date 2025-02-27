@@ -5,26 +5,26 @@ public class Car {
     private int destination;
     private int currentLocation;
     private boolean direction;
-    private ArrayList<Passenger> customers;
+    private ArrayList<Passenger> passengers;
 
     public Car(int myDestination, int start){
         destination = myDestination;
         currentLocation = start;
         direction = destination > currentLocation; //boolean comparison
-        customers = new ArrayList<Passenger>();
+        passengers = new ArrayList<Passenger>();
     }
 
     public String toString(){
-        return super.toString() + "Dstn: " + destination + " CurLoc: " + currentLocation + " Right? " + direction + " Psngrs: " + customers; //curloc = current location; psngrs = passengers
+        return super.toString() + "Dstn: " + destination + " CurLoc: " + currentLocation + " Right? " + direction + " Psngrs: " + passengers; //curloc = current location; psngrs = passengers
     }
 
     public void addPassenger(Passenger p){
-        if(customers.size() >= 3){
+        if(passengers.size() >= 3){
             System.out.println("error: no room!");
         } else if(p.getDirection() != direction) {
             System.out.println("error: trying to add person in wrong direction");
         } else {
-            customers.add(p);
+            passengers.add(p);
         }
     }
 
@@ -34,10 +34,10 @@ public class Car {
      * @return one Passenger eligible to be dropped off, null if nobody is available
      */
     public Passenger unload(){
-        for(int i = 0; i < customers.size(); i++){
-            Passenger a = customers.get(i);
+        for(int i = 0; i < passengers.size(); i++){
+            Passenger a = passengers.get(i);
             if(a.getDestination() == currentLocation){
-                customers.remove(i); 
+                passengers.remove(i); 
                 return a;
             }
         }
@@ -56,7 +56,7 @@ public class Car {
         }
     }
     public boolean hasRoom(){
-        return customers.size() < 3;
+        return passengers.size() < 3;
     }
     
 }
