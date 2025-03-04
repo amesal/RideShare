@@ -36,7 +36,7 @@ public class Car {
     public Passenger unload(){
         for(int i = 0; i < passengers.size(); i++){
             Passenger a = passengers.get(i);
-            if(a.getDestination() == currentLocation){
+            if(a.getDestination() == currentLocation || destination == currentLocation){
                 passengers.remove(i); 
                 return a;
             }
@@ -68,6 +68,10 @@ public class Car {
             }
         }
         return traveled;
+    }
+
+    public int getLocation(){
+        return currentLocation;
     }
     
 }
