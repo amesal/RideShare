@@ -24,7 +24,7 @@ public class Road {
     public void populateStations(int numPeople){
         for(int i = 0; i < numPeople; i++){
             int start = (int)(Math.random() * NUMSTATIONS);
-            int stop = (int)(Math.random() * NUMSTATIONS)
+            int stop = (int)(Math.random() * NUMSTATIONS);
             stationTracker[start].addPerson(new Passenger(stop, start));
         }
     }
