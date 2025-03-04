@@ -3,6 +3,14 @@ package RideShare;
 //have to reset traveled at the start of the program when running a new simulation (ask how to do this)
 public class Tester {
     public static void main(String[] args){
+        Road r = new Road();
+        System.out.println(r.toString());
+        r.populateStations(5);
+        r.populateCars(5);
+        System.out.println("_____________");
+
+
+        
         System.out.println("Running the RideShare Simulation!");
         System.out.println("");
         System.out.println("Establishing 3 stations...");
@@ -24,5 +32,6 @@ public class Tester {
         System.out.println(n);
         System.out.println(n.unload());
     }
+    }
     
-}
+
