@@ -37,6 +37,24 @@ public class Road {
         }
     }
 
+    private void unloadSpecificCar(Car a){
+        while(true){
+            for(Car s : carTracker){
+                while(true){
+                    Passenger p = s.unload();
+                    if(p != null){ //means that someone is ready to be transferred into station
+                        int location = s.getLocation();
+                        stationTracker[location].addPerson(p);
+                    } else {
+                        break;
+                    }
+                }
+            }
+    }
+}
+
+    
+
     public void move(){
         //move all ELIGIBLE ppl for cars when going to gas station or @ night, unload/load passengers
         //update passengers first
@@ -47,17 +65,10 @@ public class Road {
         //unload all eligible people from cars to stations
 
         for(Car c : carTracker){
-                while(true){
-                    Passenger p = c.unload();
-                    if(p != null){ //means that someone is ready to be transferred into station
-                        int location = c.getLocation();
-                        stationTracker[location].addPerson(p);
-                    } else {
-                        break;
-                    }
+                unloadSpecificCar(c);
 
             }
-        }
+        
 
         for(Car c : carTracker){
             c.move();
@@ -65,6 +76,10 @@ public class Road {
 
         //load all eligible people from stations to cars
         //going to be similar, but now looping through stations and putting in cars
+    }
+
+    public void loadSpecificCar(Car c){
+        Station matching = stationTracker[c.getLocation()];
     }
     public String displayStationStatus(){
         String stationLog = "Stations: ";
@@ -87,6 +102,7 @@ public class Road {
         }
         return (tripSummary += totalMilesTraveled);
     }
+
 
 }
 
