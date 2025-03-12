@@ -6,9 +6,9 @@ package RideShare;
 import java.util.*;
 public class Road {
     
-    private Station[] stationTracker = new Station[5]; //does this mean the stations will be named 0-4?
+    private Station[] stationTracker; //does this mean the stations will be named 0-4?
     private ArrayList<Car> carTracker = new ArrayList<Car>();
-    private static final int NUMSTATIONS = 10; //bc you know you'll have 32 stations
+    private static final int NUMSTATIONS = 10; //bc you know you'll have 32 station
 
 
 
@@ -76,6 +76,10 @@ public class Road {
 
         //load all eligible people from stations to cars
         //going to be similar, but now looping through stations and putting in cars
+
+        for(Car c : carTracker){
+            loadSpecificCar(c);
+        }
     }
 
     public void loadSpecificCar(Car c){
