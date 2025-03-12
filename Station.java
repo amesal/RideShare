@@ -60,7 +60,7 @@ public class Station {
     }
 
     public String toString(){
-        return super.toString() + " place: " + placement + "\n" + " Leftbound: " + waitingLeft.toString() + "\n" + "Rightbound:" + waitingRight.toString() + "\n" + "Completed:" + completed.toString() + "\n";
+        return super.toString() + " place: " + placement + ", Leftbound:" + waitingLeft.toString() + ", Rightbound:" + waitingRight.toString() + ", Completed:" + completed.toString();
     }
 }
 
