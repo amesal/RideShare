@@ -9,11 +9,7 @@ public class Passenger{
     public Passenger(int myDestination, int myStart){
         destination = myDestination;
         startLocation = myStart;
-        if(destination < startLocation){
-            direction = false; //bc wanting to go left
-        } else {
-            direction = true;
-        }
+        direction = destination > startLocation;
 
         //could replace if/else with "direction = destination > startLocation"
 
@@ -32,7 +28,7 @@ public class Passenger{
     }
 
     public String toString(){
-        return super.toString() + " St: " + startLocation + " Dstn: " + destination + " Right? " + direction; //boolean based on going right or not
+        return super.toString() + " St: " + startLocation + ", Dstn: " + destination + ", Right? " + direction; //boolean based on going right or not
     }
 
 }
