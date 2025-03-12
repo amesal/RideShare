@@ -15,7 +15,7 @@ public class Car {
     }
 
     public String toString(){
-        return super.toString() + "Dstn: " + destination + " CurLoc: " + currentLocation + " Right? " + direction + " Psngrs: " + passengers; //curloc = current location; psngrs = passengers
+        return super.toString() + " Dstn: " + destination + ", CurLoc: " + currentLocation + ", Right? " + direction + ", Psngrs: " + passengers; //curloc = current location; psngrs = passengers
     }
 
     public void addPassenger(Passenger p){
