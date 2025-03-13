@@ -1,7 +1,6 @@
 package RideShare;
 import java.util.*;
 
-//have to reset traveled at the start of the program when running a new simulation (ask how to do this)
 public class Tester {
     public static void main(String[] args){
         System.out.println("");
@@ -11,8 +10,8 @@ public class Tester {
         Road r = new Road();
         System.out.println("");
         System.out.println(r.displayStationStatus());
-        r.populateStations(5);
-        r.populateCars(5);
+        r.populateStations(50);
+        r.populateCars(40);
         System.out.println("_____________");
         System.out.println("Generating non-random cars with locations and destinations...");
         System.out.println("");
@@ -26,17 +25,19 @@ public class Tester {
         System.out.println("_____________");
 
   
-    
+        /**
+         * Loops through "Stages" 1-10 of stations and cars interacting to transport passengers. Road move() called and then displayStationStatus() printed.
+         */
         for(int i = 1; i <= Road.NUMSTATIONS; i++){
                 System.out.print("Stage " + i + ":");
                 System.out.println("");
                 r.move();
                 System.out.println(r.displayStationStatus());
                 System.out.println("_____________");
-            }
+        }
             
         System.out.println("The percentage of passengers that were brought to their chosen destination was " + 
-        (double) r.completedPassengers() / 5 * 100 + "%");
+        (double) r.completedPassengers() / 50 * 100 + "%.");
         System.out.println("");
 
     }
