@@ -118,6 +118,16 @@ public class Road {
         return stationLog;
     }
 
+    public String displaySummary(){
+        String tripSummary = "";
+        int totalMilesTraveled = 0;
+        for(Car a : carTracker){
+            totalMilesTraveled += a.milesTraveled();
+        }
+        return (tripSummary += totalMilesTraveled);
+
+    }
+
 
 }
 
