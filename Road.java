@@ -6,9 +6,9 @@ package RideShare;
 import java.util.*;
 public class Road {
     
-    private Station[] stationTracker; //does this mean the stations will be named 0-4?
+    private Station[] stationTracker; 
     private ArrayList<Car> carTracker = new ArrayList<Car>();
-    private static final int NUMSTATIONS = 10; //bc you know you'll have 32 station
+    public static final int NUMSTATIONS = 10; 
 
 
 
@@ -39,54 +39,74 @@ public class Road {
 
     private void unloadSpecificCar(Car a){
         while(true){
-            for(Car s : carTracker){
-                while(true){
-                    Passenger p = s.unload();
-                    if(p != null){ //means that someone is ready to be transferred into station
-                        int location = s.getLocation();
-                        stationTracker[location].addPerson(p);
-                    } else {
-                        break;
-                    }
+                Passenger p = a.unload();
+                if(p != null){ //means that someone is ready to be transferred into station
+                int location = a.getLocation();
+                stationTracker[location].addPerson(p);
+                } else {
+                    break;
                 }
             }
-    }
-}
-
+        }
     
 
     public void move(){
-        //move all ELIGIBLE ppl for cars when going to gas station or @ night, unload/load passengers
-        //update passengers first
-        //load all people from status to cars
-        //move all the cars
-
-
         //unload all eligible people from cars to stations
-
         for(Car c : carTracker){
                 unloadSpecificCar(c);
 
             }
-        
-
+        //moving car
         for(Car c : carTracker){
             c.move();
         }
-
-        //load all eligible people from stations to cars
-        //going to be similar, but now looping through stations and putting in cars
-
+        //loading all eligible people from station to car
         for(Car c : carTracker){
             loadSpecificCar(c);
         }
     }
 
+    /**
+     * Removes all eligible passengers from a station into a car (going in the correct direction & has room). Checks right and left directions.
+     * @param c
+     */
     public void loadSpecificCar(Car c){
         Station matching = stationTracker[c.getLocation()];
+        if(matching.hasRight()){
+            if(c.getDirection() && c.hasRoom()){
+                Passenger p = matching.nextRight();
+                c.addPassenger(p);
+
+            }
+        } else if(matching.hasLeft()){
+            if(!c.getDirection() && c.hasRoom()){
+                Passenger p = matching.nextLeft();
+                c.addPassenger(p);
+            }
+        }
+        
     }
+
+    /**
+     * Used to calculate percentage of passengers who reached their destination at the tester level. 
+     * @return # of passengers that reached completion (reached intended destination)
+     */
+    public int completedPassengers(){
+        int completed = 0;
+        for(Station s : stationTracker){
+            completed += s.completedCount(); 
+        }
+        return completed;
+
+    }
+    
+
+    /**
+     * toString()
+     * @return String statement to be printed
+     */
     public String displayStationStatus(){
-        String stationLog = "Stations: ";
+        String stationLog = "Stations: " + "\n";
         for(Station a : stationTracker){
             stationLog += a.toString() + "\n";
         }
@@ -98,16 +118,8 @@ public class Road {
         return stationLog;
     }
 
-    public String displaySummary(){
-        String tripSummary = "";
-        int totalMilesTraveled = 0;
-        for(Car a : carTracker){
-            totalMilesTraveled += a.milesTraveled();
-        }
-        return (tripSummary += totalMilesTraveled);
-    }
-
 
 }
+
 
 
