@@ -27,8 +27,6 @@ public class Passenger{
         return startLocation;
     }
 
-    
-
     public String toString(){
         return super.toString() + " St: " + startLocation + ", Dstn: " + destination + ", Right? " + direction; //boolean based on going right or not
     }
