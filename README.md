@@ -112,7 +112,13 @@ The percentage of passengers that were brought to their chosen destination was 4
 
 ====================================
 In this case, 44.0% of passengers were brought to their chosen destination, equivalent to 22 of 50 passengers. The increase in cars correlates with an increase in passengers reaching their intended destination. Following iterations demonstrated percentages of 54.0%, 24.0%, 36.0%, 38.0%, and so on. Overall, across iterations, more passengers were brought to their intended destination.
+
+Note: the parameters for passengers and cars currently inputted in the tester correspond to this second scenario.
 ====================================
+
+Reflection on process:
+Thank you, Mr. Rosato, for helping me during this process. This program took many hours, between trying to understand how to approach formulating different methods to typing code that I thought would work but ended up not. I remember at one point I created an alternate tester that could have significantly been been streamlined... Ultimately, I'm proud of my perseverance and my tester, since it underwent dozens of changes during this process. 
+
 
 
 
