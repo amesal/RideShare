@@ -70,7 +70,6 @@ public class Station {
      * Compiles how many people have arrived at their destination (the given station)
      * @return # of people @ correct destination
      */
-
     public int completedCount(){
         return completed.size();
     }
