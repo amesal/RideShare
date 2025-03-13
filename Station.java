@@ -3,9 +3,9 @@ import java.util.*;
 public class Station {
     
     private int placement;
-    public ArrayList<Passenger> waitingLeft;
-    public ArrayList<Passenger> waitingRight;
-    public ArrayList<Passenger> completed;
+    private ArrayList<Passenger> waitingLeft;
+    private ArrayList<Passenger> waitingRight;
+    private ArrayList<Passenger> completed;
 
     public Station(int myPlacement){
         placement = myPlacement;
