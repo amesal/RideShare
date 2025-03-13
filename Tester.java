@@ -38,6 +38,8 @@ public class Tester {
             
         System.out.println("The percentage of passengers that were brought to their chosen destination was " + 
         (double) r.completedPassengers() / 50 * 100 + "%.");
+        System.out.println("_____________");
+        System.out.println("Miles driven: " + r.displaySummary());
         System.out.println("");
 
     }
