@@ -3,9 +3,9 @@ import java.util.*;
 public class Station {
     
     private int placement;
-    private ArrayList<Passenger> waitingLeft;
-    private ArrayList<Passenger> waitingRight;
-    private ArrayList<Passenger> completed;
+    public ArrayList<Passenger> waitingLeft;
+    public ArrayList<Passenger> waitingRight;
+    public ArrayList<Passenger> completed;
 
     public Station(int myPlacement){
         placement = myPlacement;
@@ -47,6 +47,22 @@ public class Station {
             return waitingRight.remove(0);
         } else {
             return null;
+        }
+    }
+
+    public boolean hasRight(){
+        if(waitingRight.size() > 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean hasLeft(){
+        if(waitingLeft.size() > 0){
+            return true;
+        } else {
+            return false;
         }
     }
 
